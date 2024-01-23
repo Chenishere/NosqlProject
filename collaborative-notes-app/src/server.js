@@ -3,11 +3,15 @@ const redis = require("redis");
 const bodyParser = require("body-parser");
 
 const app = express();
-const port = 3000; // or any port you prefer
+const port = 3001; // or any port you prefer
 
-const client = redis.createClient(6379);
+//const client = redis.createClient(6379);
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+
+app.get('/', (req, res) => {
+  res.send("ok ok ok ")
+});
 
 // Endpoint to save a note to Redis
 app.post("/save-note", (req, res) => {
